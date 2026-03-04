@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutoriels</title>
+
+    <meta name="description" content="Toutes les tutoriels pour votre séjour au Refuge de Saintines.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎛️</text></svg>">
+    <link rel="stylesheet" href="css/base/00-tokens.css">
+    <link rel="stylesheet" href="css/base/01-reset-base.css">
+    <link rel="stylesheet" href="css/base/02-typography.css">
+    <link rel="stylesheet" href="css/base/03-layout.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/separators.css">
+    <link rel="stylesheet" href="css/components/cards.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/pages/tutoriels.css">
+</head>
+
+<body>
+    <header class="guest-header internal-header">
+        <div class="guest-container internal-header-inner">
+            <div class="internal-left">
+                <img src="images/lrds-logo.png" alt="Logo Refuge de Saintines" class="guest-logo">
+
+                <div class="guest-title">
+                    <span class="logo">Portail Voyageurs</span>
+                    <small class="sub">Votre séjour en toute simplicité</small>
+                </div>
+            </div>
+
+            <a href="tutoriels.html" class="btn-pill return-button">← Retour</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="guest-container">
+                <h1>🛋️ Canapé-lit</h1>
+                <p class="page-intro">
+                    Retrouvez ici deux vidéos explicatives sur le dépliage / repliage du canapé convertible.<br>
+                </p>
+            </div>
+        </section>
+
+        <!-- Séparateur -->
+        <section class="page-section">
+            <div class="guest-container">
+                <div class="section-separator"></div>
+            </div>
+        </section>
+
+        <div class="tutorial-video-block">
+            <div class="video-wrapper">
+                <video
+                    id="tutorialVideo"
+                    controls
+                    preload="metadata"
+                    playsinline
+                    poster=""
+                >
+                    <source id="tutorialVideoSource" src="images/Page%20-%20Tutoriels/canape-mode-lit.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture vidéo.
+                </video>
+            </div>
+
+            <a
+            id="tutorialModeBtn"
+            href="tuto-canape-lit.html?mode=canape"
+            class="btn-pill return-button tutorial-mode-btn"
+            >
+                Mode canapé →
+            </a>
+        </div>
+    </main>
+
+    <footer class="guest-footer">
+        <div class="guest-container">
+            <p>© Le Refuge de Saintines — Portail Voyageurs</p>
+            <p>
+                <a href="https://gite-refugedesaintines.com" target="_blank" rel="noopener">
+                    Accéder au site public
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const btnEl = document.getElementById('tutorialModeBtn');
+            const videoEl = document.getElementById('tutorialVideo');
+            const sourceEl = document.getElementById('tutorialVideoSource');
+
+            if (!btnEl || !videoEl || !sourceEl) return;
+
+            const SRC_LIT = 'images/Page%20-%20Tutoriels/canape-mode-lit.mp4';
+            const SRC_CANAPE = 'images/Page%20-%20Tutoriels/canape-mode-canape.mp4';
+
+            let mode = 'lit';
+
+            function updateButton() {
+                btnEl.textContent = (mode === 'lit') ? 'Mode canapé →' : 'Mode Lit →';
+
+                btnEl.setAttribute('href', '#');
+                btnEl.setAttribute('aria-label', btnEl.textContent);
+            }
+
+        function switchVideo(nextMode) {
+            if (nextMode === mode) return;
+
+            mode = nextMode;
+
+            const wasPlaying = !videoEl.paused && !videoEl.ended;
+
+            const nextSrc = (mode === 'lit') ? SRC_LIT : SRC_CANAPE;
+            sourceEl.setAttribute('src', nextSrc);
+
+            videoEl.load();
+
+            videoEl.currentTime = 0;
+
+            videoEl.addEventListener('loadedmetadata', () => {
+                if (wasPlaying) {
+                    const p = videoEl.play();
+                    if (p && typeof p.catch === 'function') p.catch(() => {});
+                }
+            }, { once: true });
+
+            updateButton();
+        }
+
+        btnEl.addEventListener('click', (e) => {
+            e.preventDefault(); // empêche tout jump / reload
+            switchVideo(mode === 'lit' ? 'canape' : 'lit');
+        });
+
+        updateButton();
+        })();
+    </script>
+</body>

@@ -1,0 +1,72 @@
+.contact-card {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* === Bouton générique (pill) === */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+  background-color: var(--white);
+  color: var(--black);
+
+  border-radius: 9999px;
+  box-shadow: var(--shadow);
+
+  font-family: "Montserrat", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
+}
+
+.btn-pill:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 22px rgba(11, 11, 11, 0.12);
+  color: var(--sage);
+}
+
+.btn-pill:active {
+  transform: scale(0.98);
+  box-shadow: 0 7px 18px rgba(11, 11, 11, 0.10);
+}
+
+/* --- Icônes dans les boutons (générique) --- */
+.btn-pill .btn-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  display: block;
+}
+
+/* Icônes "classiques" (sans fill inline) */
+.btn-pill .btn-icon path,
+.btn-pill .btn-icon circle {
+  fill: #0b0b0b;
+}
+
+/* Hover : l'icône suit la couleur du texte */
+.btn-pill:hover .btn-icon path,
+.btn-pill:hover .btn-icon circle {
+  fill: var(--sage);
+}
+
+/* WhatsApp */
+.whatsapp-icon path:last-of-type {
+  fill: #ffffff;
+}
+
+.btn-pill:hover .whatsapp-icon path:last-of-type {
+  fill: #ffffff;
+}

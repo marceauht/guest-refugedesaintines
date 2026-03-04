@@ -1,0 +1,14 @@
+.guest-welcome {
+  padding: 32px 0 16px;
+}
+
+.guest-welcome h1 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 14px;
+  text-align: center;
+}

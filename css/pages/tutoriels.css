@@ -1,0 +1,134 @@
+:root {
+  --tutorial-video-max: 320px;
+}
+
+.page-tutoriels .menu-card:last-child {
+  grid-column: auto !important;
+  justify-self: stretch !important;
+}
+
+/* Pages tutoriels — Canapé-lit */
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  
+  aspect-ratio: 9 / 16;
+  background: #000;
+
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.tutorial-video-block {
+  width: 100%;
+  max-width: var(--tutorial-video-max);
+  margin: 20px auto 24px;
+}
+
+.tutorial-mode-btn {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 24px auto 0;
+}
+
+/* Page tutoriels - PAC */
+
+.tutorial-card-section {
+  margin-bottom: 42px;
+}
+
+.tutorial-card{
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 22px;
+  max-width: 460px;
+  margin: 0 auto;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.tutorial-photo{
+  width: 100%;
+  max-width: 340px;
+  display: block;
+  margin: 0 auto 24px;
+  border-radius: 12px;
+}
+
+.tutorial-steps{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.step-title{
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tutorial-steps ul{
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 4px;
+}
+
+.tutorial-steps ul li{
+  margin-bottom: 6px;
+}
+
+.mode-list{
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.tutorial-steps > li{
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.tutorial-steps > li:last-child{
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Page tutoriels - Buanderie */
+
+.tutorial-photo-stack{
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.tutorial-subtitle{
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.tutorial-muted-row{
+  font-size: 13px;
+  opacity: 0.7;
+  line-height: 1.5;
+
+  list-style: none;
+}
+
+.tutorial-steps > li:has(+ .tutorial-muted-row){
+  border-bottom: none;
+}

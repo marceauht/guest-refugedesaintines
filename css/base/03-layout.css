@@ -1,0 +1,42 @@
+.guest-container {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.page-hero {
+  padding: 24px 0 12px;
+}
+
+.page-hero h1 {
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+
+.page-intro {
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.page-section {
+  padding: 8px 0 24px;
+}
+
+.return-button {
+  margin-right: 30px;
+}
+
+/* Sticky footer */
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}

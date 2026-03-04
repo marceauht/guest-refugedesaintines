@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Micro-ondes / Four — Tutoriels</title>
+
+  <meta name="description" content="Tutoriel micro-ondes et four (grill) pour votre séjour au Refuge de Saintines.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎛️</text></svg>">
+  <link rel="stylesheet" href="css/base/00-tokens.css">
+  <link rel="stylesheet" href="css/base/01-reset-base.css">
+  <link rel="stylesheet" href="css/base/02-typography.css">
+  <link rel="stylesheet" href="css/base/03-layout.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/buttons.css">
+  <link rel="stylesheet" href="css/components/separators.css">
+  <link rel="stylesheet" href="css/components/cards.css">
+  <link rel="stylesheet" href="css/components/footer.css">
+  <link rel="stylesheet" href="css/pages/tutoriels.css">
+</head>
+
+<body>
+  <header class="guest-header internal-header">
+    <div class="guest-container internal-header-inner">
+      <div class="internal-left">
+        <img src="images/lrds-logo.png" alt="Logo Refuge de Saintines" class="guest-logo">
+
+        <div class="guest-title">
+          <span class="logo">Portail Voyageurs</span>
+          <small class="sub">Votre séjour en toute simplicité</small>
+        </div>
+      </div>
+
+      <a href="tutoriels.html" class="btn-pill return-button">← Retour</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="guest-container">
+        <h1>🍽️ Micro-ondes / Four</h1>
+        <p class="page-intro">
+          Choisissez le mode qui vous intéresse (Micro-ondes, four ou décongélation), puis suivez les étapes.
+        </p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="guest-container">
+        <div class="section-separator"></div>
+      </div>
+    </section>
+
+    <section class="tutorial-card-section">
+      <div class="guest-container">
+
+        <div class="tutorial-card">
+          <h2 class="tutorial-subtitle" id="mwTitle">Mode micro-ondes</h2>
+
+          <div class="tutorial-photo-stack">
+            <img
+              id="mwImg"
+              src="images/Page%20-%20Tutoriels/micro-grill.webp"
+              alt="Commandes du micro-ondes / four"
+              class="tutorial-photo"
+            >
+          </div>
+
+          <ul class="tutorial-steps" id="mwSteps"></ul>
+        </div>
+
+        <a
+          id="mwSwitchBtn"
+          href="#"
+          class="btn-pill return-button tutorial-mode-btn"
+          style="margin-top: 18px;"
+        >
+          Mode four →
+        </a>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="guest-footer">
+    <div class="guest-container">
+      <p>© Le Refuge de Saintines — Portail Voyageurs</p>
+      <p>
+        <a href="https://gite-refugedesaintines.com" target="_blank" rel="noopener">
+          Accéder au site public
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const titleEl = document.getElementById('mwTitle');
+      const stepsEl = document.getElementById('mwSteps');
+      const btnEl   = document.getElementById('mwSwitchBtn');
+
+      if (!titleEl || !stepsEl || !btnEl) return;
+
+      const DATA = [
+        {
+          key: 'micro',
+          title: 'Mode micro-ondes',
+          btnText: 'Mode four →',
+          stepsHtml: `
+            <li>
+              <span class="step-title">1️⃣ Choisir la fonction</span>
+              <ul>
+                <li>Appuyer sur le bouton <strong>Micro-ondes</strong> (en haut à gauche).</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">2️⃣ Régler le temps</span>
+              <ul>
+                <li>Tourner le <strong>sélecteur rond</strong> pour choisir la durée.</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">3️⃣ Lancer</span>
+              <ul>
+                <li>Appuyer sur <strong>▶ PLAY / OK</strong>.</li>
+              </ul>
+            </li>
+
+            <li class="tutorial-muted-row">
+              Astuce : <strong>⏸ Pause/Stop</strong> permet d’arrêter ou de mettre en pause.
+            </li>
+          `
+        },
+        {
+          key: 'four',
+          title: 'Mode four',
+          btnText: 'Mode décongélation →',
+          stepsHtml: `
+            <li>
+              <span class="step-title">1️⃣ Choisir la fonction</span>
+              <ul>
+                <li>Appuyer sur le bouton <strong>Four / Grill</strong> (en haut au centre).</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">2️⃣ Régler la température</span>
+              <ul>
+                <li>Tourner le <strong>sélecteur rond</strong> pour choisir la température.</li>
+                <li>Appuyer <strong>1 fois</strong> sur <strong>▶ PLAY / OK</strong> pour passer à l’étape suivante.</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">3️⃣ Régler le temps</span>
+              <ul>
+                <li>Tourner le sélecteur pour choisir la durée.</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">4️⃣ Lancer</span>
+              <ul>
+                <li>Appuyer sur <strong>▶ PLAY / OK</strong>.</li>
+              </ul>
+            </li>
+
+            <li class="tutorial-muted-row">
+              Astuce : <strong>⏸ Pause/Stop</strong> permet d’arrêter ou de mettre en pause.
+            </li>
+          `
+        },
+        {
+          key: 'defrost',
+          title: 'Mode décongélation',
+          btnText: 'Mode micro-ondes →',
+          stepsHtml: `
+            <li>
+              <span class="step-title">1️⃣ Choisir la fonction</span>
+              <ul>
+                <li>Appuyer sur le bouton <strong>Décongélation</strong> (en bas à gauche).</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">2️⃣ Régler le poids</span>
+              <ul>
+                <li>Tourner le <strong>sélecteur rond</strong> pour choisir le poids.</li>
+                <li>Appuyer <strong>1 fois</strong> sur <strong>▶ PLAY / OK</strong> pour passer à l’étape suivante.</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">3️⃣ Régler le temps</span>
+              <ul>
+                <li>Tourner le sélecteur pour ajuster la durée.</li>
+              </ul>
+            </li>
+
+            <li>
+              <span class="step-title">4️⃣ Lancer</span>
+              <ul>
+                <li>Appuyer sur <strong>▶ PLAY / OK</strong>.</li>
+              </ul>
+            </li>
+
+            <li class="tutorial-muted-row">
+              Astuce : <strong>⏸ Pause/Stop</strong> permet d’arrêter ou de mettre en pause.
+            </li>
+          `
+        }
+      ];
+
+      let idx = 0;
+
+      function render(i) {
+        idx = i;
+        const d = DATA[idx];
+
+        titleEl.textContent = d.title;
+        stepsEl.innerHTML = d.stepsHtml;
+
+        btnEl.textContent = d.btnText;
+        btnEl.setAttribute('aria-label', d.btnText);
+      }
+
+      btnEl.addEventListener('click', function (e) {
+        e.preventDefault();
+        const next = (idx + 1) % DATA.length;
+        render(next);
+      });
+
+      render(0);
+    })();
+  </script>
+</body>
+</html>

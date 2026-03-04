@@ -1,0 +1,13 @@
+.section-separator {
+  margin-top: 28px;
+  height: 1px;
+  width: 100%;
+
+  background-color: var(--black);
+  border-radius: 9999px;
+}
+
+.page-hero + .page-section .section-separator {
+  margin-top: 6px;
+  margin-bottom: 12px;
+}

@@ -1,0 +1,12 @@
+.guest-footer {
+  background-color: var(--sage);
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.guest-footer a {
+  text-decoration: underline;
+  text-underline-offset: 1px;
+}
