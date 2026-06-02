@@ -1,94 +1,122 @@
-/* Steps */
+/* ============================================================
+   ARRIVEE.CSS — Page Arrivée / Check-in
+   ============================================================ */
+
 .arrivee-steps {
-  display: grid;
-  gap: 16px;
-  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 20px;
 }
 
 .arrivee-step {
-  padding: 12px;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 20px;
 }
 
-/* Header step */
+.arrivee-step:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
 .arrivee-step-head {
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  gap: 12px;
-  align-items: start;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
 }
 
 .arrivee-step-badge {
+  flex-shrink: 0;
   width: 34px;
   height: 34px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-
+  border-radius: 50%;
   background: var(--sage);
-  box-shadow: var(--shadow);
+  color: var(--bg);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px var(--sage-glow);
 }
 
-/* Typo step */
-.arrivee-step h3 {
-  margin: 0 0 6px;
-  font-size: 16px;
+.arrivee-step-head h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 6px;
 }
 
-.arrivee-step p {
-  margin: 0 0 8px;
+.arrivee-step-head p {
   font-size: 14px;
-  color: var(--text);
-  line-height: 1.55;
+  color: var(--cream-dim);
+  line-height: 1.65;
 }
 
-/* Code (badge) */
+/* ── Code de la boîte à clés ── */
 .arrivee-code {
   display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  background: var(--sage);
-  box-shadow: var(--shadow);
+  letter-spacing: 4px;
+  color: var(--sage);
+  background: rgba(144, 190, 171, 0.10);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--rs);
+  padding: 2px 12px;
+  margin: 2px 0;
 }
 
-/* Liste */
+/* ── Liste de l'étape 3 ── */
 .arrivee-list {
-  margin: 0 0 8px;
-  padding-left: 18px;
-  display: grid;
-  gap: 6px;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .arrivee-list li {
   font-size: 14px;
-  color: var(--text);
-  line-height: 1.45;
+  color: var(--cream-dim);
+  line-height: 1.6;
 }
 
-/* Photos */
+/* ── Médias / photos d'étape ── */
 .arrivee-media {
-  margin-top: 12px;
-  display: grid;
-  gap: 12px;
+  margin-top: 16px;
+  padding-left: 48px; /* aligné sous le texte, après le badge */
 }
 
 .arrivee-photo {
   margin: 0;
-  text-align: center;
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
 }
 
 .arrivee-photo img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-  border-radius: var(--radius);
-  margin-bottom: 4px;
-  box-shadow: var(--shadow);
+  display: block;
+  transition: transform var(--tr-slow);
 }
 
+.arrivee-photo:hover img { transform: scale(1.04); }
+
 .arrivee-photo figcaption {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 0;
+  padding: 10px 14px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  text-align: center;
+  background: var(--bg-2);
+}
+
+@media (max-width: 420px) {
+  .arrivee-media { padding-left: 0; }
 }

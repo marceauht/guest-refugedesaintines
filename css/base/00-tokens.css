@@ -1,10 +1,47 @@
-:root{
-  --cream: #F7F3EB;
-  --sage:  #90beab;
-  --black: #0b0b0b;
-  --muted: #6b6b6b;
-  --white: #ffffff;
-  --shadow: 0 6px 18px rgba(11,11,11,0.06);
-  --radius: 12px;
-  --container: 1100px;
+/* ============================================================
+   00-TOKENS.CSS — Variables de design
+   Portail Voyageurs · Le Refuge de Saintines
+   (DA alignée sur le site principal)
+   ============================================================ */
+
+:root {
+  /* ── Couleurs de marque ── */
+  --cream:        #F7F3EB;
+  --sage:         #90beab;
+  --sage-dark:    #10806e;
+  --sage-light:   #b8d8cc;
+  --muted:        #6b6b6b;
+  --white:        #ffffff;
+  --airbnb-red:   #F44336;
+
+  /* ── Fond sombre luxueux ── */
+  --bg:           #07100c;
+  --bg-2:         #0d1a14;
+  --bg-3:         #121f18;
+
+  /* ── Glass / transparences ── */
+  --glass:        rgba(144, 190, 171, 0.06);
+  --glass-border: rgba(144, 190, 171, 0.14);
+  --glass-hover:  rgba(144, 190, 171, 0.10);
+  --cream-dim:    rgba(247, 243, 235, 0.50);
+  --cream-faint:  rgba(247, 243, 235, 0.28);
+  --sage-glow:    rgba(144, 190, 171, 0.22);
+
+  /* ── Typographie ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* ── Spacing & radii ── */
+  --r:            14px;
+  --rs:           8px;
+  --container:    640px;   /* étroit : mobile-first */
+
+  /* ── Transitions ── */
+  --tr:           0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-slow:      0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Shadows ── */
+  --shadow-sm:    0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-md:    0 12px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lg:    0 24px 72px rgba(0, 0, 0, 0.55);
 }

@@ -1,134 +1,158 @@
-:root {
-  --tutorial-video-max: 320px;
-}
+/* ============================================================
+   TUTORIELS.CSS — Menu tutos + pages tuto (vidéo, étapes)
+   ============================================================ */
 
-.page-tutoriels .menu-card:last-child {
-  grid-column: auto !important;
-  justify-self: stretch !important;
+/* ── Bloc vidéo (canapé-lit) ── */
+.tutorial-video-block {
+  max-width: var(--container);
+  margin: 8px auto 0;
+  padding: 0 20px;
 }
-
-/* Pages tutoriels — Canapé-lit */
 
 .video-wrapper {
   position: relative;
-  width: 100%;
-  
-  aspect-ratio: 9 / 16;
-  background: #000;
-
-  border-radius: 14px;
+  border-radius: var(--r);
   overflow: hidden;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+  box-shadow: var(--shadow-md);
 }
 
 .video-wrapper video {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: auto;
   display: block;
+  background: #000;
 }
 
-.tutorial-video-block {
-  width: 100%;
-  max-width: var(--tutorial-video-max);
-  margin: 20px auto 24px;
-}
-
-.tutorial-mode-btn {
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  margin: 24px auto 0;
-}
-
-/* Page tutoriels - PAC */
-
+/* ── Carte tutoriel (étapes + photos) ── */
 .tutorial-card-section {
-  margin-bottom: 42px;
+  padding-top: 8px;
 }
 
-.tutorial-card{
-  background: #fff;
-  border-radius: 16px;
-  padding: 28px 22px;
-  max-width: 460px;
-  margin: 0 auto;
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+.tutorial-card {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r);
+  padding: 22px;
 }
 
-.tutorial-photo{
+.tutorial-subtitle {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--sage);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+/* ── Photos ── */
+.tutorial-photo {
   width: 100%;
-  max-width: 340px;
+  height: auto;
   display: block;
-  margin: 0 auto 24px;
-  border-radius: 12px;
+  border-radius: var(--rs);
+  border: 1px solid var(--glass-border);
+  margin-bottom: 16px;
+  background: var(--bg-2);
 }
 
-.tutorial-steps{
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  font-size: 15px;
-  line-height: 1.6;
+.tutorial-photo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.step-title{
-  font-weight: 600;
-  display: block;
-  margin-bottom: 6px;
+.tutorial-photo-stack .tutorial-photo {
+  margin-bottom: 0;
 }
 
-.tutorial-steps ul{
-  list-style: disc;
-  padding-left: 18px;
+/* ── Étapes ── */
+.tutorial-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   margin-top: 4px;
 }
 
-.tutorial-steps ul li{
-  margin-bottom: 6px;
-}
-
-.mode-list{
-  padding-left: 18px;
-  margin-top: 6px;
-}
-
-.tutorial-steps > li{
-  padding-bottom: 18px;
-  margin-bottom: 18px;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.tutorial-steps > li:last-child{
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* Page tutoriels - Buanderie */
-
-.tutorial-photo-stack{
-  display: grid;
-  gap: 14px;
-  margin-bottom: 18px;
-}
-
-.tutorial-subtitle{
-  margin: 0 0 16px;
-  font-size: 18px;
-}
-
-.tutorial-muted-row{
-  font-size: 13px;
-  opacity: 0.7;
-  line-height: 1.5;
-
+.tutorial-steps > li {
   list-style: none;
 }
 
-.tutorial-steps > li:has(+ .tutorial-muted-row){
-  border-bottom: none;
+.step-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 8px;
+}
+
+.tutorial-steps ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-left: 4px;
+}
+
+.tutorial-steps ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
+.tutorial-steps ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+/* Sous-liste (modes, programmes) légèrement en retrait */
+.tutorial-steps ul ul,
+.mode-list {
+  margin-top: 6px;
+  padding-left: 14px;
+}
+
+.mode-list li::before {
+  background: var(--sage-light);
+}
+
+/* ── Ligne "astuce / disclaimer" ── */
+.tutorial-muted-row {
+  padding-left: 0 !important;
+  font-size: 13px !important;
+  font-style: italic;
+  color: var(--cream-faint) !important;
+  line-height: 1.6;
+  background: rgba(144, 190, 171, 0.05);
+  border-left: 2px solid var(--sage);
+  border-radius: 0 var(--rs) var(--rs) 0;
+  padding: 12px 14px !important;
+}
+
+.tutorial-muted-row::before {
+  display: none !important;
+}
+
+/* ── Transition douce lors du switch de contenu (JS) ── */
+.tutorial-steps,
+.tutorial-subtitle,
+.tutorial-photo {
+  transition: opacity .3s ease;
+}
+
+.is-switching .tutorial-steps,
+.is-switching .tutorial-subtitle,
+.is-switching .tutorial-photo {
+  opacity: 0;
 }

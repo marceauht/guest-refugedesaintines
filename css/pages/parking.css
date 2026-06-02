@@ -1,71 +1,67 @@
-.parking-figure {
-  margin: 16px 0;
-  text-align: center;
-}
+/* ============================================================
+   PARKING.CSS — Page Stationnement
+   ============================================================ */
 
-.parking-figure figcaption {
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 0px;
-}
-
-.parking-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--radius);
-  margin-bottom: 4px;
-  box-shadow: var(--shadow);
-}
-
-.parking-block {
+.lrds-map-link {
   margin-top: 20px;
 }
 
-.parking-block.recommended p,
-.parking-block.alternatives p {
-  font-size: 14px;
-  color: var(--text);
+.lrds-map-link .btn-pill {
+  width: 100%;
 }
 
-.parking-block.recommended {
-  background-color: var(--sage);
-  border-radius: var(--radius);
-  padding: 12px;
+/* ── Figures / photos ── */
+.parking-figure {
+  margin: 16px 0 0;
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-2);
+}
+
+.parking-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform var(--tr-slow);
+}
+
+.parking-figure:hover .parking-image { transform: scale(1.04); }
+
+.parking-figcaption {
+  padding: 10px 14px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  text-align: center;
+  background: var(--bg-2);
+}
+
+/* ── Blocs de zones ── */
+.parking-block .info-title {
+  font-size: 19px;
 }
 
 .parking-block.recommended .info-title {
+  color: var(--sage);
+}
+
+.parking-block.recommended .info-title::before {
+  content: '★';
+  font-size: 14px;
+  color: var(--sage);
+}
+
+.parking-option + .parking-option {
   margin-top: 0;
 }
 
-.parking-block.recommended .parking-figure {
-  margin-bottom: 0;
-}
-
-.parking-block.alternatives {
-  opacity: 0.9;
-}
-
-.parking-option {
-  margin-bottom: 16px;
-  display: flex;
-  flex-direction: column;
-}
-
 .parking-option .map-link {
-  align-self: center;
-  margin-top: 8px;
+  margin-top: 14px;
 }
 
-.parking-block h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.lrds-map-link {
-  display: flex;
-  justify-content: center;
-}
-
-.guest-container .section-separator {
-  margin: 40px 0;
+/* Badge "recommandé" */
+.parking-block.recommended {
+  position: relative;
 }

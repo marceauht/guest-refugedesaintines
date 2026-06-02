@@ -1,13 +1,25 @@
-.section-separator {
-  margin-top: 28px;
-  height: 1px;
-  width: 100%;
+/* ============================================================
+   SEPARATORS.CSS — Séparateurs de section
+   ============================================================ */
 
-  background-color: var(--black);
-  border-radius: 9999px;
+.section-separator {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--glass-border) 20%,
+    var(--glass-border) 80%,
+    transparent
+  );
+  margin: 24px 0;
 }
 
-.page-hero + .page-section .section-separator {
-  margin-top: 6px;
-  margin-bottom: 12px;
+/* Variante courte centrée (décorative) */
+.divider-short {
+  width: 48px;
+  height: 1px;
+  background: var(--sage);
+  margin: 20px 0;
+  opacity: .6;
 }

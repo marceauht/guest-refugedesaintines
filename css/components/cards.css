@@ -1,69 +1,134 @@
-.guest-menu {
-  padding-bottom: 40px;
-}
+/* ============================================================
+   CARDS.CSS — Cartes menu + cartes info (glassmorphism)
+   ============================================================ */
 
+/* ── Grille du menu (mobile : 1 colonne) ── */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
+/* ── Carte de menu cliquable ── */
 .menu-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  padding: 16px 16px;
-  background-color: #ffffff;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+  display: block;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  text-decoration: none;
+  color: var(--cream);
   position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
+  transition: border-color var(--tr), background var(--tr), transform var(--tr);
+}
 
-  text-align: center;
+.menu-card::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  color: var(--sage);
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity var(--tr), right var(--tr);
+}
+
+.menu-card:hover,
+.menu-card:active {
+  border-color: rgba(144, 190, 171, 0.32);
+  background: var(--glass-hover);
+  transform: translateY(-2px);
+}
+
+.menu-card:hover::after,
+.menu-card:active::after {
+  opacity: 1;
+  right: 16px;
 }
 
 .menu-card h2 {
-  font-size: 14px;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 4px;
+  padding-right: 28px;
 }
 
 .menu-card p {
-  font-size: 12px;
-  color: #5a5a5a;
-  margin: 0;
+  font-size: 13px;
+  color: var(--cream-dim);
+  line-height: 1.5;
+  padding-right: 28px;
 }
 
-.menu-card:last-child {
-  grid-column: span 2;
-  justify-self: center;
+/* Carte menu sans description (page tutoriels) → centrage vertical */
+.menu-card.compact {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
 }
 
-.menu-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
+.menu-card.compact h2 {
+  margin-bottom: 0;
 }
 
-.menu-card:active {
-  transform: translateY(-1px);
-  box-shadow: 0 7px 18px rgba(15, 23, 42, 0.1);
-}
-
+/* ── Carte d'information (contenu) ── */
 .info-card {
-  background-color: var(--white);
-  border-radius: 14px;
-  box-shadow: var(--shadow);
-  padding: 16px 14px;
-  margin-bottom: 12px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r);
+  padding: 24px 22px;
+  margin-bottom: 16px;
+  transition: border-color var(--tr);
 }
+
+.info-card:hover { border-color: rgba(144, 190, 171, 0.24); }
 
 .info-title {
-  font-size: 18px;
-  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info-card p {
+  color: var(--cream-dim);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.info-card p + p { margin-top: 12px; }
+
+.info-card ul {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-card ul li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--cream-dim);
+  line-height: 1.6;
+}
+
+.info-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sage);
 }

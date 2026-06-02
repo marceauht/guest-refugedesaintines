@@ -2,17 +2,19 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Tutoriels</title>
+    <title>Tutoriels équipements – Le Refuge de Saintines</title>
 
-    <meta name="description" content="Toutes les tutoriels pour votre séjour au Refuge de Saintines.">
+    <meta name="description" content="Tous les tutoriels d'utilisation des équipements du Refuge de Saintines.">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07100c">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🎛️</text></svg>">
+    <link rel="icon" href="images/lrds-logo.png" type="image/png">
+
     <link rel="stylesheet" href="css/base/00-tokens.css">
     <link rel="stylesheet" href="css/base/01-reset-base.css">
     <link rel="stylesheet" href="css/base/02-typography.css">
@@ -25,73 +27,67 @@
     <link rel="stylesheet" href="css/pages/tutoriels.css">
 </head>
 
-<body class="page-tutoriels">
-    <header class="guest-header internal-header">
-        <div class="guest-container internal-header-inner">
-            <div class="internal-left">
-                <img src="images/lrds-logo.png" alt="Logo Refuge de Saintines" class="guest-logo">
+<body>
+<a class="skip-link" href="#contenu-principal">Aller au contenu</a>
 
-                <div class="guest-title">
-                    <span class="logo">Portail Voyageurs</span>
-                    <small class="sub">Votre séjour en toute simplicité</small>
-                </div>
+<header class="guest-header">
+    <div class="header-inner">
+        <div class="header-brand">
+            <img src="images/lrds-logo.png" alt="Logo Le Refuge de Saintines" class="guest-logo">
+            <div class="guest-title">
+                <span class="logo">Portail Voyageurs</span>
+                <small class="sub">Votre séjour en toute simplicité</small>
             </div>
-
-            <a href="index.html" class="btn-pill return-button">← Accueil</a>
         </div>
-    </header>
+        <a href="index.html" class="header-return">← Accueil</a>
+    </div>
+</header>
 
-    <main>
-        <section class="page-hero">
-            <div class="guest-container">
-
-                <h1>🎛️ Tutoriels équipements</h1>
-
-                <p class="page-intro">
-                    Retrouvez ici les tutoriels d'utilisation des divers équipements du Refuge de Saintines.
-                </p>
-            </div>
-        </section>
-
-        <!-- Séparateur -->
-        <section class="page-section">
-            <div class="guest-container">
-                <div class="section-separator"></div>
-            </div>
-        </section>
-
-        <!-- Menu sous forme de cartes (identique à index.html) -->
-        <nav class="guest-menu" aria-label="Menu des tutoriels équipements">
-            <div class="guest-container menu-grid">
-
-                <a href="tuto-canape-lit.html" class="menu-card">
-                    <h2>🛋️ Canapé-lit</h2>
-                </a>
-
-                <a href="tuto-clim-chauffage.html" class="menu-card">
-                    <h2>❄️ Chauffage / Clim</h2>
-                </a>
-
-                <a href="tuto-buanderie.html" class="menu-card">
-                    <h2>🧺 Buanderie</h2>
-                </a>
-
-                <a href="tuto-micro-onde.html" class="menu-card">
-                    <h2>🍲 Four micro-ondes</h2>
-                </a>
-
-            </div>
-        </nav>
-    </main>
-
-    <footer class="guest-footer">
+<main id="contenu-principal">
+    <section class="page-hero">
         <div class="guest-container">
-            <p>© Le Refuge de Saintines — Portail Voyageurs</p>
-            <p>
-                <a href="https://gite-refugedesaintines.com" target="_blank" rel="noopener">
-                    Accéder au site public
-                </a>
+            <h1 class="reveal">🎛️ Tutoriels<br><em>équipements</em></h1>
+            <p class="page-intro reveal reveal-delay-1">
+                Retrouvez ici les tutoriels d'utilisation des divers équipements du Refuge de Saintines.
             </p>
         </div>
-    </footer>
+    </section>
+
+    <section class="page-section">
+        <div class="guest-container">
+            <div class="section-separator reveal"></div>
+        </div>
+    </section>
+
+    <nav class="guest-menu" aria-label="Menu des tutoriels équipements">
+        <div class="guest-container menu-grid">
+            <a href="tuto-canape-lit.html" class="menu-card compact reveal">
+                <h2>🛋️ Canapé-lit</h2>
+            </a>
+            <a href="tuto-clim-chauffage.html" class="menu-card compact reveal">
+                <h2>❄️ Chauffage / Clim</h2>
+            </a>
+            <a href="tuto-buanderie.html" class="menu-card compact reveal">
+                <h2>🧺 Buanderie</h2>
+            </a>
+            <a href="tuto-micro-onde.html" class="menu-card compact reveal">
+                <h2>🍲 Four micro-ondes</h2>
+            </a>
+        </div>
+    </nav>
+</main>
+
+<footer class="guest-footer">
+    <div class="guest-container">
+        <p>© Le Refuge de Saintines — Portail Voyageurs</p>
+        <p>
+            <a href="https://gite-refugedesaintines.com" target="_blank" rel="noopener">
+                Accéder au site public →
+            </a>
+        </p>
+    </div>
+</footer>
+
+<script src="js/guest.js"></script>
 </body>
+</html>

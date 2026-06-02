@@ -1,12 +1,64 @@
-h1, h2, h3, h4 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-weight: 700;
-  color: var(--black);
-  margin-top: 0;
+/* ============================================================
+   02-TYPOGRAPHY.CSS — Échelle typographique mobile-first
+   ============================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.12;
+  color: var(--cream);
+}
+
+h1 {
+  font-size: clamp(32px, 9vw, 44px);
+  letter-spacing: 0.5px;
+}
+
+h1 em { font-style: italic; color: var(--sage); }
+
+h2 {
+  font-size: clamp(22px, 6vw, 30px);
+}
+
+h2 em { font-style: italic; color: var(--sage); }
+
+h3 {
+  font-size: clamp(17px, 4.5vw, 20px);
+  font-family: var(--font-body);
+  font-weight: 600;
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 12px;
-  line-height: 1.5;
+  line-height: 1.7;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+strong { font-weight: 600; color: var(--cream); }
+
+.muted {
+  color: var(--cream-faint);
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Eyebrow / label de section ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--sage);
 }

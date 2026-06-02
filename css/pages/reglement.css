@@ -1,0 +1,15 @@
+/* ============================================================
+   REGLEMENT.CSS — Page Règlement intérieur
+   ============================================================ */
+
+/* Les cartes règlement utilisent .info-card (déjà stylé).
+   Ici on ajuste juste quelques détails spécifiques. */
+
+.reglement-grid .info-card {
+  margin-bottom: 14px;
+}
+
+.info-card .muted {
+  margin-top: 12px;
+  display: block;
+}

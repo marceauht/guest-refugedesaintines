@@ -1,12 +1,33 @@
+/* ============================================================
+   FOOTER.CSS — Pied de page
+   ============================================================ */
+
 .guest-footer {
-  background-color: var(--sage);
-  padding: 16px;
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 32px;
+  padding: 28px 20px 36px;
   text-align: center;
+}
+
+.guest-footer .guest-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.guest-footer p {
   font-size: 12px;
-  color: var(--muted);
+  color: var(--cream-faint);
+  letter-spacing: 0.5px;
 }
 
 .guest-footer a {
-  text-decoration: underline;
-  text-underline-offset: 1px;
+  color: var(--sage);
+  font-size: 12px;
+  font-weight: 500;
+  transition: color var(--tr);
 }
+
+.guest-footer a:hover { color: var(--sage-light); }
