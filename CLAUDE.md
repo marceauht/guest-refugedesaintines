@@ -43,4 +43,4 @@
   - terminal 2 : `ngrok http 8080` (adresse publique temporaire, pratique pour tester sur téléphone)
 - Ici, ouvrir `index.html` directement dans le navigateur marche aussi (pas de modules JS).
 - Quand tu donnes des commandes à Marceau, donne-les pour PowerShell, pas pour Linux/Mac.
-- Toujours vérifier sur mobile : c'est l'usage principal des voyageurs.
+- **Toute modif doit marcher sur ordinateur ET sur mobile** (le mobile est l'usage principal des voyageurs). Le portail est pensé mobile d'abord, avec peu de règles `@media` (paliers 420 et 360 px) : tester au moins à 360 px, 375 px, 768 px et 1280 px avant de proposer un changement.
